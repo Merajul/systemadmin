@@ -1,0 +1,51 @@
+https://www.youtube.com/watch?v=8tLWvpJ6xTc&list=PLuoIc2nzJGSoawB3qmqcrPap1vIfULCFe&index=2
+https://www.youtube.com/watch?v=GISoerAMFnY&list=PLuoIc2nzJGSoawB3qmqcrPap1vIfULCFe&index=3
+
+
+# echo "# Code" >> README.md
+# git init
+# git add .
+# git commit -m "first commit"
+# git remote add origin https://github.com/Merajul/Code.git
+# git push -u origin master
+
+…or push an existing repository from the command line
+
+# git remote add origin https://github.com/Merajul/Code.git
+# git push -u origin master
+
+------------------------or-----------------------
+
+# git clone https://github.com/Merajul/Database.git
+
+-----all file-----
+
+# git add --all
+# git add -A  VAS.sql
+# git reset
+# git status
+# git commit -m "vas"
+# git rm data.php
+# git rm --cached two.txt
+# git rm -r folder 
+# git reset --hard [delete file roleback]
+# git reset HEAD~
+
+
+-----------git Braching----------
+
+# git branch
+# git branch development [New create branch]
+# git checkout development
+# git merge main -m "merging on development with main"
+# git merge development -m "merging on main with development"
+# git pull 
+# git push origin main
+# git push origin staging
+# git push origin development
+
+-----remote to workstation----
+
+# git fetch
+# git merge
+# git pull

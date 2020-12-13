@@ -10,15 +10,11 @@ Now we should be able to install the ntfs-3g package from the EPEL repository.
 
 [root@centos7 ~]# yum install ntfs-3g -y
 
-
-
 -----------mount----------
 # mkdir media/USB
 # fdisk -l
 # mount /dev/sdb1 /media/USB/
 # cd /media/USB
-
-
 
 -----------unmount--------------
 umount /media/USB

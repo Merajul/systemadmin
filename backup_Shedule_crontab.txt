@@ -12,16 +12,16 @@ https://www.youtube.com/watch?v=p_slI0Wy2bM&list=PLyjJoq_S0Dp_7CfxYEkADwHG8FlUqC
 
 
 
-# rsync -av -e ssh hms.sql root@27.147.156.154:/home/BACKUP/
+# rsync -av -e ssh hms.sql root@172.00.1:/home/BACKUP/
 
 
 ------------Auto Backup Keygen Sheduling- withoutpassword- server to server--------
 
 # ssh-keygen -t rsa
 # cd /root/.ssh/
-# scp id_rsa.pub root@27.147.156.154:/root/id_rsa.pub
+# scp id_rsa.pub root@172.00.1:/root/id_rsa.pub
 
- -------------- login to 27.147.156.154-------------
+ -------------- login to 172.00.1-------------
 
 # cd /root/.ssh
 # touch authorized_keys

@@ -47,4 +47,4 @@ Capture Packets from source IP
 
 Capture Packets from destination IP
 
-# tcpdump -i eth0 dst 50.116.66.139
+# tcpdump -i eth0 dst 172.00.1

@@ -1,16 +1,9 @@
 https://myvestacp.com/
 https://learnwith.hasinhayder.com/vestacp/
-
 https://vestacp.com/docs/cli/
-
-
 https://gist.github.com/hasinhayder/52d16c4ceba9fc29cc099021e308ba2f
-
 ------------rsunc command copy to server-------------
-
-#rsync -rtluvh ./ admin@107.155.116.54:/home/admin/web/web.nessbit.com/public_html/
-
-http://code.famedbd.com/
+#rsync -rtluvh ./ admin@172.00.1:/home/admin/web/web.nessbit.com/public_html/
 
 -----------------------vistacp remove-----------------------
 

@@ -30,8 +30,7 @@ https://www.youtube.com/watch?v=GISoerAMFnY&list=PLuoIc2nzJGSoawB3qmqcrPap1vIfUL
 # git rm -r folder 
 # git reset --hard [delete file roleback]
 # git reset HEAD~
-# git pull
-# git push
+
 
 -----------git Braching----------
 
@@ -40,3 +39,7 @@ https://www.youtube.com/watch?v=GISoerAMFnY&list=PLuoIc2nzJGSoawB3qmqcrPap1vIfUL
 # git checkout development
 # git merge main -m "merging on development with main"
 # git merge development -m "merging on main with development"
+# git pull 
+# git push origin main
+# git push origin staging
+# git push origin development

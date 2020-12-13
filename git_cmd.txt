@@ -43,3 +43,8 @@ https://www.youtube.com/watch?v=GISoerAMFnY&list=PLuoIc2nzJGSoawB3qmqcrPap1vIfUL
 # git push origin main
 # git push origin staging
 # git push origin development
+
+-----remote to workstation----
+
+# git fetch
+# git merge

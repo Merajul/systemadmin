@@ -1,0 +1,91 @@
+-------link--------------
+
+https://tecadmin.net/crontab-in-linux-with-20-examples-of-cron-schedule/
+https://www.youtube.com/watch?v=p_slI0Wy2bM&list=PLyjJoq_S0Dp_7CfxYEkADwHG8FlUqCU_W&index=16
+
+
+
+# yum install -y rsync
+# rsync -help
+
+----------copy client to server-------
+
+
+
+# rsync -av -e ssh hms.sql root@27.147.156.154:/home/BACKUP/
+
+
+------------Auto Backup Keygen Sheduling- withoutpassword- server to server--------
+
+# ssh-keygen -t rsa
+# cd /root/.ssh/
+# scp id_rsa.pub root@27.147.156.154:/root/id_rsa.pub
+
+ -------------- login to 27.147.156.154-------------
+
+# cd /root/.ssh
+# touch authorized_keys
+# cat /root/id_rsa.pub >> /root/.ssh/authorized_keys
+# chmod 700 /root/.ssh
+# chmod 700 /root/.ssh/authorized_keys
+# systemctl restart sshd
+
+--------end--------------
+
+
+------------------create backup.sh----------
+
+https://www.2daygeek.com/bash-script-remote-backup-replication-using-rsync-command/
+
+
+#!/bin/sh
+/usr/bin/rsync -av -e ssh /home/BACKUP/ root@27.147.156.154:/home/BACKUP/
+
+---------------more Example------------------------------------------------
+
+#!/bin/sh
+
+/usr/bin/rsync -avz -e "ssh -i /root/.ssh/id_rsa.pub"  root@A.com:/etc  /var/ServerBackup
+/usr/bin/rsync -avz -e "ssh -i /root/.ssh/id_rsa.pub"  --exclude mysite/updraft  --exclude mysite/.cache    root@A.com:/var/www   /var/ServerBackup
+........  (other similar commands)
+/usr/bin/rsync -avz -e "ssh -i /root/.ssh/id_rsa.pub"  root@A.com:/var/lib/mysql   /var/ServerBackup
+
+
+
+---------------crontab shedule-------------
+
+# crontab -e
+# 45 20 * * * bash /home/shedule/backup.sh
+
+
+# tail -f /var/log/cron
+
+
+--------------------------------------------timing------------------------------
+
+
+Automation
+In Linux, we can easily use the cron jobs in order to schedule task.
+
+The cron jobs line has 6 parts see below explanation:
+
+Minutes Hours  Day of Month Month Day of Week  Command
+0 to 59 0 to 23 1 to 31 1 to 12 0 to 6 Shell Command
+Open crontab editor utility:
+
+# crontab -e
+Note: the edit rules are similar with vi editor.
+
+Paste the following text in the editor:
+
+# M H DOM M DOW CMND
+00 04 * * * /bin/bash /backup.sh
+This will run the script every day at 04:00:00.
+
+For example, if you want to run the script only twice a week:
+
+# M   H DOM M DOW CMND
+  00 04 *   * 1,5 /bin/bash /backup.sh
+This will run the script at 04:00:00 every Monday and Friday.
+
+Note: the only risk that can occur is to get out of disk memory if the source folder is big.

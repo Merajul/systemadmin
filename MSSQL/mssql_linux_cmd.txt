@@ -1,0 +1,11 @@
+---------mssql for all database programing language-----------------
+
+https://www.microsoft.com/en-us/sql-server/developer-get-started/
+
+
+#sqlcmd -S localhost -U SA
+
+---------------------create user--------------
+
+https://www.guru99.com/sql-server-create-user.html
+TimeSpace5060#

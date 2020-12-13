@@ -1,0 +1,93 @@
+------------------------apache--------centos7--------------------
+
+https://www.tecmint.com/install-apache-on-centos-7/
+
+
+-----vhost apache----
+
+vi /opt/lampp/etc/extra/httpd-vhosts.conf
+
+
+------------only  for xampp---------
+
+
+<VirtualHost *:80>
+    DocumentRoot "/home/project/testvhost"
+    ServerName wap.famedbd.com
+    <Directory "/home/project/testvhost">
+        Options All
+        AllowOverride All
+        Require all granted
+  </Directory>
+
+</VirtualHost>
+
+
+
+-----------------APACHE-PERMISSON-----------------------
+#sudo chown -R apache:apache /var/www/html/project_name
+#sudo chown -vR apache. /home/www/html/
+#sudo chown -vR ssh_user:ssh_user /var/www/html
+#sudo chown -vR apache:apache /var/lib/php/session
+
+su
+cd /var/www
+sudo chown www-data:www-data -R *
+sudo chcon -R -v -t httpd_sys_rw_content_t
+/etc/init.d/apache2 restart
+
+
+
+
+
+
+
+https://linuxize.com/post/how-to-set-up-apache-virtual-hosts-on-centos-7/
+
+
+https://www.youtube.com/watch?v=fs1as0hXvrQ
+
+
+https://www.howtoforge.com/tutorial/centos-lamp-server-apache-mysql-php/
+
+https://www.cyberciti.biz/faq/how-to-install-php-7-2-on-centos-7-rhel-7/
+https://tecadmin.net/install-php7-on-centos7/
+
+php and apache devel install koray nitay hobay
+
+
+#yum install pcre-devel
+#export PHP_DTRACE=yes
+#pecl install oci8
+#yum install systemtap-sdt-devel
+
+
+--------vhost only for apache--------------------
+
+<VirtualHost *:80>
+    ServerName wap.famedbd.com
+    ServerAlias wap.famedbd.com
+    ServerAdmin dawnmerajul@gmail.com
+    DocumentRoot /var/www/wap.famedbd.com/public_html
+
+    <Directory /var/www/wap.famedbd.com/public_html>
+        Options All
+        AllowOverride All
+        Require all granted
+        allow from all
+    </Directory>
+
+    ErrorLog /var/log/httpd/wap.famedbd.com-error.log
+    CustomLog /var/log/httpd/wap.famedbd.com.com-access.log combined
+</VirtualHost>
+
+
+-------------------------wellcome.conf-------change-----------------
+
+https://www.thegeekdiary.com/how-to-disable-the-default-apache-welcome-page-in-centos-rhel-7/
+
+
+-------------------------------ssl configaration------------------
+
+https://www.linode.com/docs/security/ssl/ssl-apache2-centos/
+

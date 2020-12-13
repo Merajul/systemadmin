@@ -1,0 +1,5 @@
+
+https://trinitytuts.com/run-php-script-every-5-second-using-bash-and-cron-job/
+https://www.thegeekstuff.com/2011/07/cron-every-5-minutes/
+https://www.youtube.com/watch?v=sS5Y-rSaf-c
+https://crontab.guru/

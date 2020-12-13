@@ -1,0 +1,7 @@
+https://medium.com/@satishas06/inshorts-how-to-configure-nginx-server-with-php-in-windows-7-8-or-10-9cfcbdfe7203
+https://www.nginx.com/resources/wiki/start/topics/examples/phpfastcgionwindows/
+
+----------------nginx cmd------------
+
+-> start nginx
+-> taskkill /f /IM nginx.exe

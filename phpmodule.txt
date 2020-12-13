@@ -1,0 +1,1 @@
+sudo yum install php php-curl php-gd php-mbstring php-xml php-xmlrpc php-soap php-intl php-zip php-cli php-fpm php-json php-pdo php-mysql php-zip php-gd php-mbstring php-curl php-pear php-bcmath php-common php-imagick php-dev php-imap php-opcache php-soap php-intlphp-dom php-devel php-mcrypt php-pecl-apcu php-pecl-apcu-devel php-intl setroubleshoot-server bzip2 -y

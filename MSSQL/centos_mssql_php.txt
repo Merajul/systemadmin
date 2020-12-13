@@ -1,0 +1,107 @@
+
+
+
+https://www.microsoft.com/en-us/sql-server/developer-get-started/php/rhel
+https://github.com/Microsoft/msphpsql/releases
+
+
+----------mssql ---------------install------------
+
+https://kifarunix.com/install-microsoft-sql-server-2017-on-fedora-29-centos-7/
+
+https://www.server-world.info/en/note?os=CentOS_7&p=mssql2017&f=1
+
+https://docs.microsoft.com/en-us/sql/linux/quickstart-install-connect-red-hat?view=sql-server-2017
+
+
+------------------------------port  allow firewall-  1433 port----------------------------
+
+https://www.mssqltips.com/sqlservertip/4730/how-to-change-default-port-for-sql-server-on-linux/
+
+--------------------------job-procedure---------------
+https://www.mssqlonlinux.com/post/install-sql-server-agent-on-red-hat
+
+https://docs.microsoft.com/en-us/sql/linux/sql-server-linux-run-sql-server-agent-job?view=sql-server-2017
+
+--------------------mssqlend----------------
+
+https://docs.google.com/document/d/1jryR2K8JN5OBK4J4w_cWJVO0teSmAO8F2gmRGJHfpQA/edit 
+
+https://github.com/Microsoft/msphpsql/releases
+
+
+-----------------database-backup--centosmssql--------------------
+
+https://docs.microsoft.com/en-us/sql/linux/sql-server-linux-backup-and-restore-database?view=sql-server-ver15
+
+------backup----
+
+sqlcmd -S localhost -U vasgp -Q "BACKUP DATABASE [gganvandar] TO DISK = N'/home/DATABASEBACKUP/gganvandar.bak' WITH NOFORMAT, NOINIT, NAME = 'gganvandar-full', SKIP, NOREWIND, NOUNLOAD, STATS = 10"
+
+sqlcmd -S localhost -U vasgp -Q "BACKUP LOG [gganvandar] TO DISK = N'/home/DATABASEBACKUP/gganvandar_LogBackup.bak' WITH NOFORMAT, NOINIT, NAME = N'gganvandar_LogBackup', NOSKIP, NOREWIND, NOUNLOAD, STATS = 5"
+
+
+------restor----------
+
+
+sqlcmd -S localhost -U nessbit -Q "RESTORE DATABASE [gganvandar] FROM DISK = N'/home/DATABASEBACKUP/gganvandar.bak' WITH FILE = 1, NOUNLOAD, REPLACE, NORECOVERY, STATS = 5"
+
+sqlcmd -S localhost -U nessbit -Q "RESTORE LOG gganvandar FROM DISK = N'/home/DATABASEBACKUP/gganvandar_LogBackup.bak'"
+
+
+
+
+
+-------ext-folder----------------
+
+
+#php -i | grep extension_dir
+
+-----php ext------
+
+#yum --enablerepo=remi,remi-php73 install php-pear
+
+
+#pecl install pecl_http
+
+
+
+
+
+
+sed -i 's/extension="pdo_sqlsrv.so"/ /g' /etc/php.ini
+sed -i 's/extension="sqlsrv.so"/ /g' /etc/php.ini
+sed -i 's/extension="php_pdo_sqlsrv_72_nts.so"/ /g' /etc/php.ini
+sed -i 's/extension="php_sqlsrv_72_nts.so"/ /g' /etc/php.ini
+sed -i 's/extension="php_pdo_sqlsrv_72_ts.so"/ /g' /etc/php.ini
+sed -i 's/extension="php_sqlsrv_72_ts.so"/ /g' /etc/php.ini
+echo ''';Enable pdo_sqlsrv extension module
+ extension=pdo_sqlsrv.so
+extension=sqlsrv.so
+extension=php_pdo_sqlsrv_72_nts.so
+extension=php_sqlsrv_72_nts.so
+extension=php_pdo_sqlsrv_72_ts.so
+extension=php_sqlsrv_72_ts.so
+     ''' > /etc/php.d/pdo_sqlsrv.ini
+	 
+	 
+	 
+extension=pdo_sqlsrv.so
+extension=sqlsrv.so
+extension=php_pdo_sqlsrv_72_nts.so
+extension=php_sqlsrv_72_nts.so
+extension=php_pdo_sqlsrv_72_ts.so
+extension=php_sqlsrv_72_ts.so
+
+
+-------database connection php mssql -------------------\
+<?php
+    $servername = "localhost";
+    $connectionInfo = array("Database"=>"vas_petpuja", "UID"=>"vasuser", "PWD"=>"vaspwd", "CharacterSet"=>"UTF-8");
+    $conn = sqlsrv_connect($servername, $connectionInfo);  
+?>
+
+
+
+
+

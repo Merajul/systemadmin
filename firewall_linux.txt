@@ -1,0 +1,5 @@
+https://opensource.com/article/18/9/linux-iptables-firewalld
+https://www.thegeekdiary.com/5-useful-examples-of-firewall-cmd-command/
+
+ ----------------iptables---
+https://www.digitalocean.com/community/tutorials/iptables-essentials-common-firewall-rules-and-commands

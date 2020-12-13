@@ -1,0 +1,7 @@
+https://www.tecmint.com/install-laravel-with-nginx-on-ubuntu/
+https://www.tecmint.com/install-lemp-with-phpmyadmin-in-ubuntu-20-04/
+
+-------laravel---------------
+
+php artisan cache:clear
+php artisan config:cache

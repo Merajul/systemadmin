@@ -1,0 +1,14 @@
+
+<<<<<<<<<<<<---------------Transfer File Remote Server to Local
+
+scp -P 2222 root@45.120.115.3:/home/linux.x64_11gR2_database_1of2.zip linux.x64_11gR2_database_2of2.zip apache-tomcat-8.5.24.zip 
+apache-ant-1.10.1-bin.zip /home/
+
+
+
+
+<<<<<<<<<<<<---------------Transfer File Local to Remote Server
+
+scp -r linux.x64_11gR2_database_1of2.zip linux.x64_11gR2_database_2of2.zip apache-tomcat-8.5.24.zip apache-ant-1.10.1-bin.zip 
+
+203.95.220.2:/home/

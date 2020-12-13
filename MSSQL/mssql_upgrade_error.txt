@@ -1,0 +1,15 @@
+https://dba.stackexchange.com/questions/238508/cannot-systemctl-start-stop-mssql-mssql-server-stuck-in-script-upgrade-mode-ca
+
+
+
+----------------------------**************************---------------------------------
+
+I've tried the solutions proposed in SqlServer is in script upgrade mode which is just to wait (two days in my case), Can't connect to mssql server on ubuntu because script is in upgrade mode, which suggests typing
+
+# sudo /opt/mssql/bin/mssql-conf traceflag 902 on
+# sudo systemctl start mssql-server
+
+SQL Server 2017 on Linux in script upgrade mode after update, which suggest typing
+
+# sudo /opt/mssql/bin/mssql-conf set sqlagent.enabled true
+# sudo systemctl start mssql-server

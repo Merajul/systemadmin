@@ -1,0 +1,3 @@
+
+
+/run/php-fpm/www.sock

@@ -1,0 +1,50 @@
+https://www.hugeserver.com/kb/install-use-tcpdump-capture-packets/
+
+Monitor All HTTP Requests (like TCPdump) On a Linux Server with httpry
+
+netstat -pnltu
+
+# httpry -i em1
+
+To save httpry’s output to a text file:
+
+# sudo httpry -i eth0 -o output.txt
+
+If you want to monitor only specific HTTP methods
+ (e.g., GET, POST, PUT, HEAD, CONNECT, etc), use ‘-m’ option:
+
+#  sudo httpry -i eth0 -m get,head
+
+Best way to check out body content of http POST request on linux
+
+# ngrep "POST" tcp and port 80
+
+---------------------------------------------tcpdump-------------------------------------
+
+-------------hTTPS Monitor-----------------
+
+tcpdump -s 0 'tcp dst port 443'
+
+-----------------------------------------
+
+
+
+# tcpdump -c 200. -i em1
+
+Capture IP address Packets
+
+#tcpdump -n -c 200. -i em1
+
+# tcpdump -i eth0 port 80 -A
+
+Capture Packet from Specific Port
+
+# tcpdump -i em1 port 22
+
+Capture Packets from source IP
+
+# tcpdump -i eth0 src 192.168.0.2
+
+Capture Packets from destination IP
+
+# tcpdump -i eth0 dst 50.116.66.139

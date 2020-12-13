@@ -1,0 +1,207 @@
+
+
+---------mssql for all database programing language-----------------
+
+https://www.microsoft.com/en-us/sql-server/developer-get-started/
+
+
+#sqlcmd -S localhost -U SA
+
+---------------------create user--------------
+
+https://www.guru99.com/sql-server-create-user.html
+
+
+-------------------install-link------------
+
+https://www.if-not-true-then-false.com/2010/install-mysql-on-fedora-centos-red-hat-rhel/
+https://www.tecmint.com/install-latest-mysql-on-rhel-centos-and-fedora/
+http://howtolamp.com/lamp/requirements/removing-mysql-server/
+
+
+
+-------------mysql----usefull---quaery-------------
+
+
+
+----------import------------------------
+
+mysql -p -u username database_name < file.sql 
+-----------or------
+mysql> use db_name;
+mysql> source backup-file.sql;
+
+
+
+
+
+----------------------create database all prevelige----------
+way 1----
+
+->CREATE DATABASE exampleDB; 
+CREATE USER 'example_user'@'localhost' IDENTIFIED BY 'password'; 
+->GRANT ALL PRIVILEGES ON exampleDB.* TO 'example_user'@'localhost';
+
+way 2---
+
+
+->CREATE USER username;
+->GRANT ALL ON databaseName.* TO 'username'@'localhost' IDENTIFIED BY 'secret
+
+
+
+way4-----2019 update-----------------------
+
+#firewall-cmd --zone=public --add-port=3306/tcp --permanent
+#vi /etc/my.cnf
+[mysqld]
+bind-address = 0.0.0.0
+port = 3306
+
+https://bgasparotto.com/enable-mysql-remote-access
+
+
+
+------------------remote permission-----------------
+
+mysql> CREATE USER 'root'@'%' IDENTIFIED BY 'root';
+
+mysql> GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' WITH GRANT OPTION;
+
+GRANT ALL PRIVILEGES ON *.* TO 'root'@'IP' IDENTIFIED BY 'PASS';///identified
+
+GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' identified BY 'EliteClub4dl#';
+
+FLUSH PRIVILEGES;
+
+
+
+https://www.cyberciti.biz/tips/how-do-i-enable-remote-access-to-mysql-database-server.html
+
+
+
+------------remote bind address------------------
+
+https://linuxize.com/post/how-to-install-iptables-on-centos-7/
+
+mysql> SHOW GLOBAL VARIABLES like 'bind_address';
+
+
+
+
+-----------------php database connection  mysql 8-----------------
+
+mysql->   ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'password'; 
+
+You have to change MySQL settings. Edit my.cnf file and put this setting in mysqld section:
+
+[mysqld]
+
+default_authentication_plugin= mysql_native_password
+
+Then run following command:
+
+mysql-> FLUSH PRIVILEGES;
+
+---------access denied for user 'root'@'localhost' (using password no) centos 7------------------
+
+https://stackoverflow.com/questions/35078234/access-denied-fro-user-rootlocalhost-on-centos-7
+
+Stop MySQL:
+#systemctl stop mysqld
+
+Set the mySQL environment option
+
+#systemctl set-environment MYSQLD_OPTS="--skip-grant-tables"
+
+Start MySQL using the options you just set
+#systemctl start mysqld
+
+Login as root without a password
+#mysql -u root
+
+->ALTER USER 'root'@'localhost' IDENTIFIED BY 'MyNewPass';
+
+Stop MySQL
+#systemctl stop mysqld
+
+Unset the MySQL environment option so it starts normally next time
+#systemctl unset-environment MYSQLD_OPTS
+
+Start MySQL normally:
+#systemctl start mysqld
+
+
+
+--------------mysqlpass reset--------------------
+
+Use the below steps to reset the password:
+
+$ sudo systemctl start mysqld
+
+Reset the MySQL server root password.
+
+$sudo grep 'temporary password' /var/log/mysqld.log
+Output something like:
+
+10.744785Z 1 [Note] A temporary password is generated for root@localhost: o!5y,oJGALQa
+Use the above password during reset mysql_secure_installation process.
+
+$ sudo mysql_secure_installation
+Securing the MySQL server deployment.
+
+Enter password for user root: 
+You have successfully reset the root password of MySQL server. Use the below command to check the MySQL server connecting or not.
+
+$ mysql -u root -p
+
+
+------------------mysqlremove-----------------
+
+
+Execute the following command :
+
+#yum remove mysql mysql-bench mysql-devel mysql-libs mysql-server mysql-test mysql-connector-java mysql-connector-odbc
+
+# userdel -r mysql
+
+
+# rpm -qa | grep mysql
+It will list all installed mysql packages on your system. Eg: mysql-libs-5.1.73-3.el6_5.x86_64
+
+
+you may have somehow installed mariadb when you thought it was installing mysql.
+
+
+#rpm -qa | grep maria
+mariadb-server-5.5.52-1.el7.x86_64
+mariadb-libs-5.5.52-1.el7.x86_64
+mariadb-devel-5.5.52-1.el7.x86_64
+mariadb-5.5.52-1.el7.x86_64
+
+now execute the command:
+
+# yum remove <name displayed in above step-1>
+Eg: yum remove mysql-libs-5.1.73-3.el6_5.x86_64
+
+yum remove mysql mysql-server
+
+
+-------------------mysql csv import----------------------
+
+http://www.mysqltutorial.org/import-csv-file-mysql-table/
+
+
+----------caching_sha2_password-------------
+
+# SELECT user,plugin from mysql.user;
+# SHOW VARIABLES LIKE 'validate_password%';
+# SET GLOBAL validate_password.policy=LOW;
+# SET GLOBAL validate_password.check_user_name=OFF;
+# FLUSH PRIVILEGES;
+# ALTER USER 'root'@'localhost' IDENTIFIED WITH caching_sha2_password BY 'data123#';
+
+systemctl restart mysql
+
+
+

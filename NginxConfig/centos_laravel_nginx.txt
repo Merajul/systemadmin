@@ -1,0 +1,40 @@
+https://www.tecmint.com/install-laravel-php-framework-on-centos-8/
+
+https://www.ionos.com/community/server-cloud-infrastructure/nginx/solve-an-nginx-403-forbidden-error/
+
+--------------------------upgradenginx--------------
+
+https://www.digitalocean.com/community/tutorials/how-to-set-up-nginx-server-blocks-on-centos-7
+
+https://www.prado.lt/5-minute-upgrade-nginx-1-12-to-1-17-on-centos-7-rhel-7
+
+
+-----------fastCGI error----------------
+
+https://github.com/niiknow/ajenticp/issues/2
+
+
+
+-------------------------php-fpm-remove-------
+
+sudo yum remove --setopt=clean_requirements_on_remove=1 php php-fpm
+sudo yum install php-fpm php-cli
+sudo systemctl start php-fpm
+
+------------------------------php file not vigable---------------
+
+https://stackoverflow.com/questions/39950129/nginx-doesnt-serve-php-files
+
+location ~ \.php$ {
+    fastcgi_pass   unix:/var/run/php-fpm/php-fpm.sock;
+    fastcgi_index  index.php;
+    fastcgi_param  SCRIPT_FILENAME  $document_root$fastcgi_script_name;
+    include        fastcgi_params;
+}
+
+
+------------------------------laravel_prblm----
+
+https://laracasts.com/discuss/channels/general-discussion/do-not-run-composer-as-rootsuper-user-see-httpsgetcomposerorgroot-for-details?page=1
+
+# export COMPOSER_ALLOW_SUPERUSER=1

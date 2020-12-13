@@ -1,0 +1,27 @@
+# systemctl enable NetworkManager
+# systemctl start NetworkManager
+  service network start
+  chkconfig network on
+
+
+
+TYPE=Ethernet
+BOOTPROTO=none
+DEFROUTE=yes
+IPV4_FAILURE_FATAL=no
+IPV6INIT=yes
+IPV6_AUTOCONF=yes
+IPV6_DEFROUTE=yes
+IPV6_FAILURE_FATAL=no
+IPV6_ADDR_GEN_MODE=stable-privacy
+NAME=enp2s0
+UUID=30be8477-e3da-4ab2-a3ba-1745e2f37cd0
+DEVICE=enp2s0
+ONBOOT=no
+DNS1=8.8.8.8
+IPADDR=203.95.220.2
+PREFIX=29
+GATEWAY=203.95.220.1
+IPV6_PEERDNS=yes
+IPV6_PEERROUTES=yes
+

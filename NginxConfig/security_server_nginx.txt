@@ -1,0 +1,6 @@
+https://devops.ionos.com/tutorials/how-to-harden-the-apache-web-server-on-centos-7/
+
+
+https://www.nginx.com/blog/mitigating-ddos-attacks-with-nginx-and-nginx-plus/
+https://bobcares.com/blog/nginx-ddos-prevention/
+https://webhostinggeeks.com/howto/nginx-ddos-attack-tutorial/

@@ -1,0 +1,45 @@
+https://opensource.com/article/18/9/linux-iptables-firewalld
+https://www.thegeekdiary.com/5-useful-examples-of-firewall-cmd-command/
+
+-----netconnection status-----
+
+#	 netstat -ntpl
+
+# firewall-cmd --state
+# firewall-cmd --list-ports
+# 
+# firewall-cmd --list-all-zones
+
+# firewall-cmd --zone=public --permanent --add-port=80/tcp
+# firewall-cmd --zone=public --permanent --add-port=443/tcp
+# firewall-cmd --reload
+
+# firewall-cmd --permanent --add-port=22/TCP --permanent
+# firewall-cmd --permanent --add-port=53/UDP
+# firewall-cmd --permanent --add-service=ssh
+
+Whitelist an IP Address
+
+# firewall-cmd --permanent --add-source=192.168.1.100
+
+Remove a Whitelisted IP Address
+
+# firewall-cmd --permanent --remove-source=192.168.1.100
+
+------Block an IP Address-------------
+
+# firewall-cmd --permanent --add-rich-rule="rule family='ipv4' source address='192.168.1.100' reject"
+# firewall-cmd --permanent --add-rich-rule="rule family='ipv4' source address='192.168.1.0/24' reject"
+
+
+---------------Whitelist an IP Address for a Specific Port (More Rich Rules)--------------
+
+# firewall-cmd --permanent --add-rich-rule='rule family="ipv4" source address="192.168.1.100" port protocol="tcp" port="3306" accept'
+
+-----Removing a Rich Rule-----
+
+# firewall-cmd --permanent --remove-rich-rule='rule family="ipv4" source address="192.168.1.100" port protocol="tcp" port="3306" accept'
+-----------------------------------remove--------------------------------
+
+# firewall-cmd --permanent --remove-port=444/tcp
+# firewall-cmd --permanent --remove-service=mysql

@@ -1,0 +1,19 @@
+git clone https://github.com/Merajul/Database.git
+
+git status
+
+
+----single file---
+
+git add -A  VAS.sql
+
+-----all file-----
+
+git add --all
+
+git commit -m "vas"
+
+git pull
+
+git push
+

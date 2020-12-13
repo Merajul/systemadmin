@@ -1,0 +1,7 @@
+CREATE DATABASE LINK remot 
+   CONNECT TO bloodbank IDENTIFIED BY bloodbank123
+   USING '(DESCRIPTION=
+            (ADDRESS=(PROTOCOL=TCP)(HOST=103.66.177.142)(PORT=1521))
+            (CONNECT_DATA=(SERVICE_NAME=ORCL))
+          )';
+         

@@ -1,0 +1,1 @@
+https://www.journaldev.com/29833/install-varnish-cache-centos-7

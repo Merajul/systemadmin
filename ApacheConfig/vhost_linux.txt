@@ -1,0 +1,33 @@
+
+https://linuxize.com/post/how-to-set-up-apache-virtual-hosts-on-centos-7/
+
+
+
+--------vhost only for apache--------------------
+
+<VirtualHost *:80>
+    ServerName wap.famedbd.com
+    ServerAlias wap.famedbd.com
+    ServerAdmin dawnmerajul@gmail.com
+    DocumentRoot /var/www/wap.famedbd.com/public_html
+
+    <Directory /var/www/wap.famedbd.com/public_html>
+        Options All
+        AllowOverride All
+        Require all granted
+        allow from all
+    </Directory>
+
+    ErrorLog /var/log/httpd/wap.famedbd.com-error.log
+    CustomLog /var/log/httpd/wap.famedbd.com.com-access.log combined
+</VirtualHost>
+
+
+-------------------------wellcome.conf-------change-----------------
+
+https://www.thegeekdiary.com/how-to-disable-the-default-apache-welcome-page-in-centos-rhel-7/
+
+
+-------------------------------ssl configaration------------------
+
+https://www.linode.com/docs/security/ssl/ssl-apache2-centos/

@@ -1,41 +1,37 @@
 https://www.youtube.com/watch?v=8tLWvpJ6xTc&list=PLuoIc2nzJGSoawB3qmqcrPap1vIfULCFe&index=2
 https://www.youtube.com/watch?v=GISoerAMFnY&list=PLuoIc2nzJGSoawB3qmqcrPap1vIfULCFe&index=3
 
-…or create a new repository on the command line
 
-
-echo "# Code" >> README.md
-git init
-git add .
-git commit -m "first commit"
-git remote add origin https://github.com/Merajul/Code.git
-git push -u origin master
-
-
+# echo "# Code" >> README.md
+# git init
+# git add .
+# git commit -m "first commit"
+# git remote add origin https://github.com/Merajul/Code.git
+# git push -u origin master
 
 …or push an existing repository from the command line
 
-git remote add origin https://github.com/Merajul/Code.git
-git push -u origin master
-
+# git remote add origin https://github.com/Merajul/Code.git
+# git push -u origin master
 
 ------------------------or-----------------------
 
-git clone https://github.com/Merajul/Database.git
-
-git status
-
-
-----single file---
-
-git add -A  VAS.sql
+# git clone https://github.com/Merajul/Database.git
 
 -----all file-----
 
-git add --all
+# git add --all
+# git add -A  VAS.sql
+# git reset
+# git status
+# git commit -m "vas"
+# git rm data.php
+# git rm --cached two.txt
+# git rm -r folder 
+# git reset --hard [delete file roleback]
+# git reset HEAD~
+# git pull
+# git push
 
-git commit -m "vas"
-
-git pull
-
-git push
+-----------git Braching----------
+# git branch

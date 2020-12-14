@@ -1,4 +1,6 @@
+----------------MySQL Master-Slave Replication on CentOS 7--------------
 
+https://linuxize.com/post/how-to-configure-mysql-master-slave-replication-on-centos-7/
 
 ---------mssql for all database programing language-----------------
 

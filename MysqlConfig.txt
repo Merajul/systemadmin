@@ -79,6 +79,28 @@ FLUSH PRIVILEGES;
 https://www.cyberciti.biz/tips/how-do-i-enable-remote-access-to-mysql-database-server.html
 
 
+-------------------remote permission 2----------------------
+
+# Any host, execute:-----------
+
+mysql> use mysql;
+mysql> UPDATE user SET password=PASSWORD("<your password>") where User = 'root';
+mysql> GRANT ALL PRIVILEGES ON *.* TO root@'%' IDENTIFIED BY '<your password>';
+mysql> GRANT TRIGGER ON *.* TO root@'%' IDENTIFIED BY '<your password>';
+mysql> GRANT SUPER ON *.* TO root@'%' IDENTIFIED BY '<your password>';
+mysql> FLUSH PRIVILEGES
+
+
+# A particular host, execute these commands, replacing HostX with the name of your host:--------
+
+
+mysql> use mysql;
+mysql> UPDATE user SET password=PASSWORD("<your password>") where User = 'root' AND Host = 'HostX';
+mysql> GRANT ALL PRIVILEGES ON *.* TO root@'HostX' IDENTIFIED BY '<your password>';
+mysql> GRANT TRIGGER ON *.* TO root@'HostX' IDENTIFIED BY '<your password>';
+mysql> GRANT SUPER ON *.* TO root@'HostX' IDENTIFIED BY '<your password>';
+mysql> FLUSH PRIVILEGES;
+
 
 ------------remote bind address------------------
 

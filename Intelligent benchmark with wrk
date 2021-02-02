@@ -1,0 +1,39 @@
+wrk is a modern HTTP benchmarking tool capable of generating significant load when run on a single multi-core CPU.
+you can find the project here 
+
+https://github.com/wg/wrk.
+
+We will install it and do some stupid benchmark, and then we will change dynamically some tests.
+
+On Ubuntu
+
+# sudo apt-get install build-essential libssl-dev git -y
+# git clone https://github.com/wg/wrk.git wrk
+# cd wrk
+# sudo make
+move the executable to somewhere in your PATH, ex:
+# sudo cp wrk /usr/local/bin
+
+Benchmark an HTTP endpoint
+
+# wrk -t12 -c400 -d30s --latency http://127.0.0.1:8080/index.html
+
+This runs a benchmark for 30 seconds, using 12 threads, and keeping 400 HTTP connections open.
+
+Output:
+
+Running 30s test @ http://localhost:8080/index.html
+  12 threads and 400 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   635.91us    0.89ms  12.92ms   93.69%
+    Req/Sec    56.20k     8.07k   62.00k    86.54%
+Latency Distribution
+  50% 250.00us
+  75% 491.00us
+  90% 700.00us
+  99% 5.80ms  
+22464657 requests in 30.00s, 17.76GB read
+Requests/sec: 748868.53
+Transfer/sec:    606.33MB
+
+

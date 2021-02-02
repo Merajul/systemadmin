@@ -1,2 +1,16 @@
 https://webscript.info/rizwan/how-to-deploy-your-reactjs-application-in-digital-ocean-cloud-server-5f26b6788e558
 https://www.youtube.com/watch?v=My3c4IQHq_Y
+
+# npm install -g pm2
+# pm2 list
+# pm2 start server.js --name "production_react_App"
+
+
+location / {
+        proxy_pass http://localhost:8080;
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection 'upgrade';
+        proxy_set_header Host $host;
+        proxy_cache_bypass $http_upgrade;
+    }	 

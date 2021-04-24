@@ -1,4 +1,5 @@
 
+http://dbaora.com/install-oracle-database-19c-in-silent-mode-on-oel7/
 
 ------------------tigervnc-configer------------------
 vncserver -list
